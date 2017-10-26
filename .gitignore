@@ -1,0 +1,13 @@
+*.idea
+out
+*.mdj
+*.pdf
+*.mdj
+*.iml
+.idea
+.classpath
+.settings
+bin
+.project
+*.orig
+mcd
