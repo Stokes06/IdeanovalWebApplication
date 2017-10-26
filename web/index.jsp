@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HB1
-  Date: 26/10/2017
-  Time: 14:38
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="tools.Functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>IdeaNoval</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
-  $END$
+  <jsp:include page="header.jsp"></jsp:include>
+  <%=Functions.debug(session)%>
   </body>
 </html>
