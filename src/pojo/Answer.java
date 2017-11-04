@@ -3,12 +3,10 @@ package pojo;
 public class Answer {
 
     private User user;
-    private Poll poll;
     private Option option;
 
-    public Answer(Poll poll, Option option,User user) {
+    public Answer(Option option,User user) {
         this.user = user;
-        this.poll = poll;
         this.option = option;
     }
 
@@ -18,14 +16,6 @@ public class Answer {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Poll getPoll() {
-        return poll;
-    }
-
-    public void setPoll(Poll poll) {
-        this.poll = poll;
     }
 
     public Option getOption() {
@@ -40,7 +30,7 @@ public class Answer {
     public String toString() {
         return "Answer{" +
                 "user=" + user +
-                ", poll=" + poll +
+
                 ", option=" + option +
                 '}';
     }

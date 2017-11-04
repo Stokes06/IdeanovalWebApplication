@@ -2,13 +2,11 @@ package pojo;
 
 public enum Category {
 
-    SPORT(1,"Sport"),NATURE(2,"Nature"),MATHEMATIQUES(3,"Maths"),AUTOMOBILE(4,"Automobile"),MUSIQUE(5,"Musique");
-    private int idCategory;
+    SPORT("Sport"),NATURE("Nature"),MATHEMATIQUES("Maths"),AUTOMOBILE("Automobile"),MUSIQUE("Musique");
     private String name;
-    Category(int id, String _name)
+    Category(String _name)
     {
         name = _name;
-        idCategory = id;
     }
 
     @Override
