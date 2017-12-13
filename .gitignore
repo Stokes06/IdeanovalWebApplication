@@ -3,6 +3,7 @@ out
 *.mdj
 *.pdf
 *.mdj
+*.jar
 *.iml
 .idea
 .classpath

@@ -2,12 +2,13 @@ package db;
 
 import java.sql.*;
 
-public class Database {
+public class DataConnect {
 
     private static Connection db;
     private static String user = "root";
     private static String password = "";
     private static String database = "db_ideanoval";
+
     public static Connection getInstance() {
         if (db != null) return db;
 

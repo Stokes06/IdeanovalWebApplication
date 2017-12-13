@@ -1,5 +1,6 @@
 $(function(){
 
+    console.log("log dans firefox ??")
  var btn_ins = $('#btn_inscription');
  btn_ins.click(function(e)
  {
@@ -17,10 +18,12 @@ $(function(){
          if(datas.length<2)
          {
              var user_id=datas[0];
+             console.log(user_id);
              //aucune erreur
              $('#alert_inscription').html('<p class="alert alert-success">Inscription réussie</p>');
                 $.post("#",{"user_id":user_id},function () {
                     console.log("rechargement page avec session avec id = ",user_id);
+                     window.location.reload()
                 })
          }else{
              $('#alert_inscription').html("");
@@ -41,3 +44,42 @@ $(function(){
 
  })
 })
+
+var btn_co = $('#btn_connexion')
+btn_co.click(function(event){
+    console.log("clic sur connexion");
+    event.preventDefault();
+    var email = $('#email_co').val();
+    var password = $('#password_co').val();
+    $.post("/login",{"email":email , "password":password},function(data){
+        console.log("reponse du serveur : ",data)
+        if(data!=="")
+        {
+
+            var user_id = data;
+            //connexion réussie
+
+            $.post("header.jsp",{"user_id":user_id},function () {
+                console.log("go vers page connectée")
+                window.location.reload()
+
+            })
+        }else{
+            $('#alert_connexion').html('<span class="alert alert-danger">L\'identification a écouchée. Veuillez reessayer.</span>')
+
+        }
+    })
+})
+
+
+var btn_logout = $('#btn_logout');
+btn_logout.click(function(event){
+    event.preventDefault();
+    console.log("i go away")
+    var deco = 'disconnected';
+    $.post("header.jsp",{"deco":deco},function () {
+        console.log("rechargement page pour deconnexion");
+        window.location.reload()
+    })
+
+});

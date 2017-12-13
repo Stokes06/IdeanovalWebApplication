@@ -4,18 +4,18 @@ public class Mark {
 
     private User user;
     private EvaluableIdea idea;
-    private boolean grade;
+    private boolean like;
 
     /**
      *
      * @param user
      * @param idea
-     * @param grade true pour top / false pour flop
+     * @param like true pour top / false pour flop
      */
-    public Mark(User user, EvaluableIdea idea, boolean grade) {
+    public Mark(User user, EvaluableIdea idea, boolean like) {
         this.user = user;
         this.idea = idea;
-        this.grade = grade;
+        this.like = like;
     }
 
     public User getUser() {
@@ -35,11 +35,11 @@ public class Mark {
     }
 
     public boolean isTop() {
-        return grade;
+        return like;
     }
 
     public void setGrade(boolean grade) {
-        this.grade = grade;
+        this.like = grade;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Mark {
         return "Mark{" +
                 "user=" + user +
                 ", idea=" + idea +
-                ", grade=" + ((grade)? "top" : "flop") +
+                ", grade=" + ((like)? "top" : "flop") +
                 '}';
     }
 }

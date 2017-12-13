@@ -4,6 +4,14 @@ public class Client extends User {
 
     private boolean isValidated;
     private boolean isDeleted;
+
+    public Client() {
+    }
+
+    public Client(User u) {
+        super(u);
+    }
+
     public Client(String login, String password, String pseudo) {
         super(login, password, pseudo);
 
@@ -33,5 +41,10 @@ public class Client extends User {
                 "isValidated=" + isValidated +
                 ", isDeleted=" + isDeleted +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
     }
 }

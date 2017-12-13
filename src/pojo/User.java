@@ -1,6 +1,6 @@
 package pojo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class User {
 
@@ -11,11 +11,20 @@ public class User {
     private String pseudo;
     private Date registerDate;
 
+    public User() {
+    }
+    public User(User u){
+        setId(u.id);
+        setLogin(u.login);
+        setRegisterDate(u.registerDate);
+        setPseudo(u.pseudo);
+        setPassword(u.password);
+    }
+
     public User(String login, String password, String pseudo) {
         this.login = login;
         this.password = password;
         this.pseudo = pseudo;
-
         this.id = user_count++;
     }
 
@@ -68,5 +77,15 @@ public class User {
                 ", pseudo='" + pseudo + '\'' +
                 ", registerDate=" + registerDate +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        return pseudo != null ? pseudo.equals(user.pseudo) : user.pseudo == null;
     }
 }
